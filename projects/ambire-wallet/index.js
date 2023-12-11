@@ -30,7 +30,7 @@ async function ethTvl(timestamp, block) {
 module.exports = {
   methodology: `The Ambire TVL consists of all eligible tokens locked in Ambire contracts. $WALLET rewards are distributed based on this number.`, 
   ethereum:{
-    tvl: () => ({}),
+    tvl: ethTvl,
     staking: sdk.util.sumChainTvls([
       staking(WALLET_staking, WALLET, 'ethereum')
     ]), 
